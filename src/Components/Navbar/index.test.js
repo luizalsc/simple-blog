@@ -1,7 +1,7 @@
 import { Navbar } from '.'
 import { Provider } from 'react-redux'
 import { createMockStore } from "./testing-utils"
-import { render, screen, act } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 describe('Renders Navbar component correctly', ()=>{
   it('renders navbar correctly before login', ()=>{

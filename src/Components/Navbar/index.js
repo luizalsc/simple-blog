@@ -4,7 +4,7 @@ const Navbar = ()=>{
 
   const user = useSelector((state)=> state.user)
 
-  const welcomeText = user.status === true ? `Bem-vindo(a) ${user.user.username}`: 'Faça Login'
+  const welcomeText = user.status === true ? `Bem-vindo(a) ${user.profile.username}`: 'Faça Login'
   
     return(
       <div>
