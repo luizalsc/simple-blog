@@ -6,22 +6,22 @@ function LoginForm (){
 
   const dispatch = useDispatch()
 
-  const [user, setUser] = useState({})
+  const [profile, setProfile] = useState({})
 
   const handleInputChange = (event)=>{
     const value = event.target.value
-    setUser({...user, [event.target.name]: value})
+    setProfile({...profile, [event.target.name]: value})
   }
   const handleSubmit = (event)=>{
     event.preventDefault()
     dispatch(loginStatus(true))
-    dispatch(login(user))
+    dispatch(login(profile))
     
   }
 
   return(
     <main>
-        <form value={user} role='loginform' onSubmit={handleSubmit}>
+        <form value={profile} role='loginform' onSubmit={handleSubmit}>
           <label htmlFor='username'>User name</label>
           <input
             type='text'

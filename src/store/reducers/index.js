@@ -1,4 +1,5 @@
 import {
+  DELETE_POST,
   LOGIN,
   LOGIN_STATUS,
   POST_SUBMITION_CONTENT,
@@ -10,7 +11,7 @@ import { combineReducers } from "redux"
 export function userReducer(state = {}, action){
   switch(action.type){
     case LOGIN: {
-      return {...state, user: action.payload}
+      return {...state, profile: action.payload}
     }
     
     case LOGIN_STATUS: {
@@ -22,13 +23,14 @@ export function userReducer(state = {}, action){
   }
 }
 
-export function postReducer( state = {}, action){
+export function postListReducer( state = [], action){
   switch(action.type){
     case POST_SUBMITION_CONTENT: {
-      return{
-        ...state,
-        content: action.payload
-      }
+      return[...state, action.payload]
+    }
+
+    case DELETE_POST: {
+      return [...state.filter((post)=> post !== action.payload)]
     }
     default:
       return state
@@ -36,7 +38,8 @@ export function postReducer( state = {}, action){
 }
 
 const rootReducer = combineReducers({
-  user: userReducer
+  user: userReducer,
+  posts: postListReducer
 })
 
 export default rootReducer

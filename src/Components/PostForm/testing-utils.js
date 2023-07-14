@@ -3,9 +3,9 @@ import configureStore from 'redux-mock-store'
 function createMockStore () {
   const mockStore = configureStore({})
   const store = mockStore({
-    user: {
+    user:{
       status: true,
-      profile: {
+      profile:{
         username: 'Ana',
         password: '2002'
       }

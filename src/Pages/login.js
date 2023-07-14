@@ -1,6 +1,7 @@
 import { LoginForm } from "../Components/LoginForm"
 import { PostForm } from "../Components/PostForm"
 import { Navbar } from "../Components/Navbar"
+import { PostList } from "./postList"
 
 function LoginPage () {
   return (
@@ -8,6 +9,7 @@ function LoginPage () {
       <Navbar />
       <LoginForm />
       <PostForm />
+      <PostList />
     </>
   )
 }
